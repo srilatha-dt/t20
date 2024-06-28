@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    var mail = localStorage.getItem("email");
+    var n = localStorage.getItem("name");
+    var num = localStorage.getItem("number");
+    var team = localStorage.getItem("team");
+    document.getElementById("nm").innerHTML = mail;
+    document.getElementById("em").value = n;
+    document.getElementById("nm").value = num;
+    document.getElementById("tm").value = team;
+    
+    
+    </script>
+</head>
+<body>
+    <h5 id="nm"></h5>
+    <h5 id="em"></h5>
+    <h5 id="nm"></h5>
+    <h5 id="tm"></h5>
+    <h1>Thank you for submitting the form</h1>
+</body>
+</html>
