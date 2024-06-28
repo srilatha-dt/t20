@@ -26,6 +26,7 @@
     
     <h1>Posts</h1>
     <button id="updateData">Update Data</button>
+    <input type="text" id="searchInput" placeholder="search by name" />
     <table>
         <thead>
             <tr>
@@ -42,6 +43,7 @@
     
 </body>
 <script>
+    var posts;
     
 document.addEventListener('DOMContentLoaded', (event) => {
     const users = {
@@ -95,13 +97,25 @@ document.addEventListener('DOMContentLoaded', (event) => {
     };
 
     const updateData = async () => {
-        const posts = await fetchPosts();
+        posts = await fetchPosts();
         displayPosts(posts);
     };
 
     document.getElementById('updateData').addEventListener('click', updateData);
 
-    
+    const searchInput = document.getElementById("searchInput");
+searchInput.addEventListener("input", () => {
+  const searchTerm = searchInput.value.trim().toLowerCase();
+  if (searchTerm) {
+    const filteredPosts = posts.filter((post) =>
+      post.name.toLowerCase().includes(searchTerm)
+    );
+    displayPosts(filteredPosts);
+  } else {
+    displayPosts(posts);
+  }
 });
+});
+
 </script>
 </html>
