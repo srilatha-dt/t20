@@ -1,22 +1,22 @@
 module ExampleMethods
   def CalculatePrice(i, c, w, v)
     x = 24
-    totalvolume = TotalVolume(v, i)
-    totalweight = TotalWeight(w, i)
-    totalvolume = TotalVolume(c, i)
+    totalvolume = total_volume(v, i)
+    totalweight = total_weight(w, i)
+    totalvolume = total_volume(c, i)
     print_enter_a_amount_ten_times
     calculate_total_value_and_return_in_10_different_strings(totalvolume, totalweight, totalvolume)
   end
 
-  def TotalVolume(v, i)
+  def total_volume(v, i)
     v * i
   end
 
-  def TotalWeight(w, i) 
+  def total_weight(w, i) 
     w * i
   end
 
-  def TotalVolume(v, i, z = nil)
+  def total_volume(v, i, z = nil)
     v * i
   end
 
