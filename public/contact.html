@@ -41,14 +41,11 @@
             document.getElementById('numberMessage').style.color = 'red';
           }
         }
-        function displayfields(s) {
+        function displayfields() {
             
             var conditionalFields = document.getElementById('hiden-fields');
-            if ((document.getElementById('te')).checked) {
-                document.getElementById("hiden-fields").style.display = 'block';
-            } else{
-                document.getElementById("hiden-fields").style.display = 'none';
-            }
+            
+            conditionalFields.style.display = 'block';
         }
         function store(){
           var inputEmail= document.getElementById("email");
@@ -107,7 +104,7 @@
                             </div>
                             <div>
                                 <label for="team" class="form-label">Choose your team</label>
-                                <select class="form-select bg-info" aria-label="Default select example" id="select" onchange="displayfields(this)" onclick="store()" required>
+                                <select class="form-select bg-info" aria-label="Default select example" id="select" onchange="displayfields()" onclick="store()" required>
                                     <option  value="">--select--</option>
                                     <option id="te" class="t" value="India">India</option>
                                     <option class="t" value="pakistan">pakistan</option>
@@ -133,7 +130,7 @@
                                       </label>
                                     </div>
                                   </div> 
-                                </div>
+                               
                                 <div class="px-3" >
                                   <label for="opinion" class="form-label">Do you like T20?</label>
                                   <div class="form-check">
@@ -150,6 +147,7 @@
                                     </div>
                                 </div>
                             </div>
+                          
                           
                             <button type="reset" class="btn btn-primary bg-danger mt-3">reset</button>
                             <button type="submit" class="btn btn-primary bg-danger mt-3">submit</button>
