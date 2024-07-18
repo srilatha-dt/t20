@@ -1,7 +1,7 @@
 require 'csv'
 class Match < ApplicationRecord
-    has_and_belongs_to_many :players, :teams
-    def populate
+
+    def self.populate
         CSV.foreach("db/matches.csv", headers: true) do |row|
             match = Match.new
             match.date = row["date"]
@@ -16,3 +16,4 @@ class Match < ApplicationRecord
 
     end
 end
+#Match.populate 
